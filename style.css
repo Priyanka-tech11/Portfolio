@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(46, 95, 30, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.nav{
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.nav a::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #f0d58c;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after{
+    width: 100%;
+}
+
+/* ===== MODE BUTTON ===== */
+.butn{
+    padding: 6px 14px;
+    border-radius: 150px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* ===== HOME SECTION ===== */
+#home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro{
+    padding-left: 80px;
+}
+
+.intro h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+    transform: translateY(-50px);
+    animation: slideDown 1s ease forwards;
+}
+
+.intro p{
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.6;
+   
+    transform: translateX(-50px);
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    margin-top: 30px;
+    padding: 10px 30px;
+    border-radius: 150px;
+    background: linear-gradient(to right, rgba(1,19,1,0.6), rgba(63,110,68,1));
+    color: white;
+    border: 2px solid rgb(154,154,63);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.8s;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+
+/* ===== SECTIONS ===== */
+section{
+    padding: 120px 50px;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.about-section,
+.project-section,
+.skills-section,
+.Experience-section,
+.Contact-section{
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.about-section.show,
+.project-section.show,
+.skills-section.show,
+.Experience-section.show,
+.Contact-section.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes slideDown{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#about {
+    min-height: 100vh;
+    margin-left: 40px;;
+}
+.about-section h1{
+     font-size: 60px;
+    margin-bottom: 20px;
+}
+.about-section p{
+     max-width: 650px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.tech-icons {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+}
+
+.icon {
+    position: absolute;
+    width: 55px;
+    opacity: 0.9;
+    animation: float 4s ease-in-out infinite;
+}
+
+.i1 { top: 0; left: 40%; animation-delay: 0s; }
+.i2 { top: 30%; left: 0; animation-delay: 1s; }
+.i3 { top: 30%; right: 0; animation-delay: 1.5s; }
+.i4 { bottom: 0; left: 35%; animation-delay: 2s; }
+.i5 { bottom: 40%; left: 50%; animation-delay: 2.5s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+
