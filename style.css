@@ -113,25 +113,6 @@ section{
     padding: 120px 50px;
 }
 
-/* ===== SCROLL ANIMATION ===== */
-.about-section,
-.project-section,
-.skills-section,
-.Experience-section,
-.Contact-section{
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
-}
-
-.about-section.show,
-.project-section.show,
-.skills-section.show,
-.Experience-section.show,
-.Contact-section.show{
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ===== KEYFRAMES ===== */
 @keyframes slideDown{
@@ -247,5 +228,101 @@ section{
     100% { transform: translateY(0); }
 }
 
+#projects{
+    min-height: 100vh;
+    padding: 80px 60px;
+    background-color: #050d02;
+    color: #fff;
+}
 
+.section-title{
+    font-size: 48px;
+    margin-bottom: 60px;
+    text-align: center;
+}
 
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.project-card{
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* Project Images */
+.item1{
+    background-image: url("p1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.item2{
+    background-image: url("p2.png");
+}
+
+.item3{
+    background-image: url("p3.png");
+}
+
+/* Overlay */
+.project-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.2)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay{
+    opacity: 1;
+}
+
+.project-overlay h3{
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.project-overlay p{
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 15px;
+}
+
+.project-overlay a{
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #9acd32;
+    padding: 8px 16px;
+    width: fit-content;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.project-overlay a:hover{
+    background-color: #9acd32;
+    color: #000;
+}
